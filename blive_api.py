@@ -31,7 +31,7 @@ if response.status_code == 200:
             ac = action_type[action]
             cur_time = da["sendDate"]
             # print(cur_time)
-            date_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(cur_time))
+            date_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(float(cur_time)/1000))
             if ac == '普通弹幕' or ac == 'SC':
                 message = da['message']
                 print(f'直播间：{liver}, {ac}: {message}, 时间: {date_time}')
